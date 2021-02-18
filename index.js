@@ -13,7 +13,8 @@ any associated data will not be kept.
 
 For any questions or suggestions:
 
-70f6bc0a@krivaltsevich.com
+security-research@krivaltsevich.com
+https://github.com/70f6bc0a/Contact
 
 LICENSE:
 
